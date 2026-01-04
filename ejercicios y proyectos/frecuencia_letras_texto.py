@@ -16,4 +16,3 @@ for letter in string:
     letters[letter] += 1
 
 print(letters)
-
