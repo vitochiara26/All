@@ -27,3 +27,5 @@ for intento in range(1, intentos_maximos + 1):
 
 if adivinanza != numero_secreto:
     print(f"\nLo siento el numero secreto era {numero_secreto}. ¡Mejor suerte la proxima vez!")
+
+input("\nPresiona 'ENTER' para salir")
