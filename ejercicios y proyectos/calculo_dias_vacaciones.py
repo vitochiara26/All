@@ -24,7 +24,7 @@ if clave == 1 :
         print(nombre , " aun no gozaras del derecho a vacaciones.\n")
         
         
-#Flujo para los trabajadores de logistica       
+#Flujo para los trabajadores de logistica
 elif clave == 2 :
      clave = str("logistica")
      if años == 1 :
