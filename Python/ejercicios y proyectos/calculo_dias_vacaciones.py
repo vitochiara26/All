@@ -59,7 +59,7 @@ elif clave == 3 :
         print("\n" + nombre + ", del departamento de " + clave + ", gozaras de " + str(dias_vacaciones) + " dias de vacaciones debido a tus " + str(años) + " años de servicio en esta empresa.\n")
 
      else :
-        print(nombre , " aun no gozaras del derecho a vacaciones.\n")
+        print(nombre , ' aun no gozaras del "derecho" a vacaciones.\n')
     
 else :
     print("La clave no existe.")
