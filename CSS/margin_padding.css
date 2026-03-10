@@ -1,0 +1,41 @@
+.uno {
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+.dos {
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    border: 2px solid black;
+}
+
+.tres {
+    margin: 10px;
+}
+
+.cuatro {
+    margin: 15px 23px;
+}
+
+.cinco {
+    margin: 13px 25px 30px;
+}
+
+.seis {
+    margin: 11px 20px 32px 40px;
+}
+
+.padding {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    border: 2px solid black;
+}
+
+.pad {
+    padding: 10px 20px 30px 40px;
+    border: 2px solid black;
+}
