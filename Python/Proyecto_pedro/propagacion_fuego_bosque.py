@@ -115,8 +115,6 @@ while turno <= turnos:
 
     # Si no hay llamas en ningun estado, significa que el fuego se ha extinguido por completo y 
     # finalizamos el programa.
-    if aun_hay_fuego_0 == 0 and aun_hay_fuego_1 == 0 and aun_hay_fuego_2 == 0 and aun_hay_fuego_3 == 0:
+    if aun_hay_fuego_0==0 and aun_hay_fuego_1 == 0 and aun_hay_fuego_2==0 and aun_hay_fuego_3 == 0:
         print("El fuego se ha extinguido en su totalidad y no hay mas quemables.")
         break
-
-

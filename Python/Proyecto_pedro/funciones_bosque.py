@@ -108,6 +108,7 @@ def mostrarMatrizBosqueEmojis(bosque):
         bosque_emojis += "\n"
     return bosque_emojis
 
+
 def crearNoQuemables(filas, columnas, bosque):
     """ La función `crearNoQuemables` toma tres parámetros: `filas`, `columnas` y `bosque`. 
     La función tiene como objetivo agregar elementos no quemables al bosque representado por la 
