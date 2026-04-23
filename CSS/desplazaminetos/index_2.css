@@ -1,0 +1,20 @@
+.pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.pagination-controls {
+    margin-top: 12px;
+}
+
+.pagination-controls button {
+    padding: 8px 16px;
+    margin-right: 8px;
+}

@@ -1,0 +1,49 @@
+body {
+    background-color: #f0f0f0;
+    color: #111;
+    font-family: sans-serif;
+    padding: 1rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.dark-mode-examples {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.box {
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    transition: background 0.3s, color 0.3s;
+    background-color: #ffffff;
+    color: #111;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.dark .box.harsh-dark {
+    background-color: #000000; 
+    color: #ffffff;           
+}
+
+body.dark .box.soft-dark {
+    background-color: #1e1e1e; 
+    color: #cccccc;           
+}
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark button {
+    background-color: transparent;
+    color: #e0e0e0;
+}

@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="index_1.css">
+
+<form id="progressForm">
+  <div class="form-progress" aria-label="Form progress">
+    <label class="progress-label">Step <span id="currentStep">1</span> of <span id="totalSteps">4</span> (<span id="percentage">25%</span>)</label>
+    <div class="progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Step 1 -->
+  <fieldset class="form-step active">
+    <legend>Basic Information</legend>
+    <p>Please enter your basic information.</p>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <button type="button" class="next-btn">Next</button>
+  </fieldset>
+
+  <!-- Step 2 -->
+  <fieldset class="form-step">
+    <legend>Contact Details</legend>
+    <p>How can we reach you?</p>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="button" class="prev-btn">Previous</button>
+    <button type="button" class="next-btn">Next</button>
+  </fieldset>
+
+  <!-- Step 3 -->
+  <fieldset class="form-step">
+    <legend>Address</legend>
+    <p>Where do you live?</p>
+    <label for="address">Street:</label>
+    <input type="text" id="address" name="address" required>
+
+    <button type="button" class="prev-btn">Previous</button>
+    <button type="button" class="next-btn">Next</button>
+  </fieldset>
+
+  <!-- Step 4 -->
+  <fieldset class="form-step">
+    <legend>Review</legend>
+    <p>Review your answers before submitting.</p>
+
+    <button type="button" class="prev-btn">Previous</button>
+    <button type="submit">Submit</button>
+  </fieldset>
+</form>
+<script src="index_1.js"></script>

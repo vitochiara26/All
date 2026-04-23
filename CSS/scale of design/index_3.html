@@ -1,0 +1,43 @@
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 20px;
+    margin: 0;
+    background-color: #fafafa;
+  }
+
+  .navbar {
+    background-color: #004080;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 4px;
+  }
+
+  .nav-link:hover {
+    background-color: #0059b3;
+  }
+
+  @media (max-width: 600px) {
+    .nav-link {
+      font-size: 20px;
+      padding: 14px 18px;
+    }
+  }
+</style>
+
+<nav class="navbar">
+  <a href="#" class="nav-link">Home</a>
+  <a href="#" class="nav-link">About</a>
+  <a href="#" class="nav-link">Services</a>
+  <a href="#" class="nav-link">Contact</a>
+</nav>

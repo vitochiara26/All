@@ -32,6 +32,7 @@ class Car:
     def describe(self):
         '''Describe'''
         return f"This car is a {self.color} {self.model}"
+
 car_1 = Car("red", "Toyota Corolla")
 car_2 = Car("green", "Lamborghini Revuelto")
 

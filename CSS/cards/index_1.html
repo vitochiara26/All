@@ -1,0 +1,47 @@
+<style>
+.card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 8px 0;
+}
+
+.card button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card button:hover {
+    background-color: #1664b7;
+}
+</style>
+
+<div class="card">
+    <img src="https://placehold.co/150x150" alt="Example Product Image">
+    <h2>Product Name</h2>
+    <button>Buy Now</button>
+</div>

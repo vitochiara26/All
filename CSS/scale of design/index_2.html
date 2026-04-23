@@ -1,0 +1,47 @@
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #fefefe;
+    color: #333;
+  }
+
+  .banner {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+  }
+
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .banner {
+      max-width: 90%;
+    }
+
+    .content {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<img 
+  src="https://placehold.co/1200x400/png?text=Large+Banner+Image"
+  alt="Banner" 
+  class="banner"
+>
+
+<div class="content">
+  <p>
+    This banner image looks great on a large screen, but on smaller devices, it scales down automatically.
+    That way, it still delivers a strong visual impression without pushing the actual content off the screen.
+    Scaling images properly helps maintain balance and accessibility across layouts.
+  </p>
+</div>

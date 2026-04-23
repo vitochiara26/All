@@ -1,0 +1,51 @@
+body {
+    background-color: #f0f0f0;
+    color: #111;
+    font-family: sans-serif;
+    transition: background 0.4s, color 0.4s;
+    padding: 1rem;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background 0.4s, color 0.4s;
+}
+
+.buttons button {
+    border: none;
+}
+
+.saturated {
+    background-color: #ff00ff; 
+    color: white;
+}
+
+.desaturated {
+    background-color: #c472b5; 
+    color: white;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark .saturated {
+    background-color: #ff00ff; 
+    color: black;
+}
+
+body.dark .desaturated {
+    background-color: #c472b5; 
+    color: black;
+}
+
+body.dark button {
+    border-color: white;
+    background-color: transparent;
+    color: white;
+}

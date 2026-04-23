@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="index.css">
+
+<form id="multiStepForm">
+  <div class="form-progress">
+    <label class="progress-label">Form progress</label>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+      <div class="progress-text">Step 1 of 3</div>
+    </div>
+  </div>
+
+  <!-- Step 1 -->
+  <fieldset class="form-step active">
+    <legend>Personal Information</legend>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="button" class="next-btn">Next</button>
+  </fieldset>
+
+  <!-- Step 2 -->
+  <fieldset class="form-step">
+    <legend>Address</legend>
+    <label for="address">Street Address:</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+
+    <button type="button" class="prev-btn">Previous</button>
+    <button type="button" class="next-btn">Next</button>
+  </fieldset>
+
+  <!-- Step 3 -->
+  <fieldset class="form-step">
+    <legend>Review & Submit</legend>
+    <p>Please review your information before submitting.</p>
+
+    <button type="button" class="prev-btn">Previous</button>
+    <button type="submit">Submit</button>
+  </fieldset>
+</form>
+
+<script src="index.js"></script>

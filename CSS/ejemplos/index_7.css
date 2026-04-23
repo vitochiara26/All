@@ -1,0 +1,9 @@
+.linear-gradient{
+    background: linear-gradient(to right, red, yellow);
+    height: 40vh;
+}
+
+.radial-gradient{
+    background: radial-gradient(circle closest-side at center, red, yellow 50%, green);
+    height: 60vh;
+}
