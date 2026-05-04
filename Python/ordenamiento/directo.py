@@ -1,7 +1,7 @@
 from datetime import datetime as t
 time1 = t.now()
 
-arreglo = [4, 3, 1, 5, 2, 8, 6, 9, 7]
+arreglo = [33, 1, 89, 2, 67, 245]
 
 for i in range(len(arreglo)):
 
