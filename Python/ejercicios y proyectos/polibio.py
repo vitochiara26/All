@@ -6,7 +6,7 @@ matriz_alfabeto =[
     ['U', 'V', 'X', 'Y', 'Z']
 ]
 
-mensaje = 'hellomundo'
+mensaje = 'holamundo'
 tammaño_mensaje = len(mensaje)
 
 posiciones_mensaje = [
