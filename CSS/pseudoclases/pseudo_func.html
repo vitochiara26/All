@@ -1,0 +1,54 @@
+<style>
+    :is(button, a.button, input[type='submit'], input[type='reset']) {
+        background-color: darkblue;
+        color: white;
+        border: 1px solid darkblue;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 5px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    :is(button, a.button, input[type='submit'], input[type='reset']):hover {
+        background-color: blue;
+        border-color: blue;
+    }
+
+    :where(h1, h2, h3) {
+        margin: 0;
+        padding: 0;
+    }
+
+    article:has(h2) {
+        border: 2px solid hotpink
+    }
+</style>
+
+<button>Example Button</button>
+<a href="#" class="button">Link styled like a button</a>
+<input type="submit" value="Submit" />
+<input type="reset" value="Reset" />
+
+<h1>Page Title</h1>
+<h2>Subtitle</h2>
+<h3>A point</h3>
+
+<p>Example paragraph.</p>
+<p>Example paragraph.</p>
+<p>Example paragraph.</p>
+
+<article>
+    <h2>Subheading</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+</article>
+
+<article>
+    <h3>A point</h3>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+</article>
+

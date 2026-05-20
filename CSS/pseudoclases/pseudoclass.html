@@ -1,0 +1,125 @@
+<style>
+    button, #agree, #lname, #lemail {
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #active:active {
+        background-color: greenyellow;
+    }
+
+    #hover:hover {
+        text-decoration: none;
+        color: white;
+        background: crimson;
+    }
+
+    .container p:first-child {
+        background: lightcoral;
+        padding: 0.4rem;
+    }
+
+    .container p:last-child {
+        background: lightcoral;
+        padding: 0.4rem;
+    }
+
+    #visited:visited {
+        color: purple;
+    }
+
+    button:disabled {
+        margin-top: 15px;
+    }
+
+    .text:focus {
+        outline: 2px solid darkgreen;
+        border-radius: 4px;
+    }
+
+    .checkbox {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .checkbox:hover {
+        border-color: #888;
+    }
+
+    .checkbox:checked {
+        background-color: #4caf50;
+        border-color: #4caf50;
+    }
+
+    .checkbox:checked::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 0px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .checkbox:focus {
+        outline: 2px solid #90caf9;
+        outline-offset: 2px;
+    }
+
+    input:required {
+        border: 2px solid orange;
+    }
+
+    input:valid {
+        border-color: green;
+    }
+
+    input:invalid {
+        border-color: red;
+    }
+
+    input:disabled {
+        background-color: lightgray;
+        cursor: not-allowed;
+    }
+    </style>
+
+<button id="active">
+    Example Button
+</button>
+
+<a id="hover" href="#">
+    Hover over me!
+</a>
+
+<div class="container">
+    <p>first child</p>
+    <p>second child</p>
+    <p>third child</p>
+    <p>last child</p>
+</div>
+
+<a id="visited" href="https://www.example.com">Visit Example.com</a>
+
+<button disabled>Disabled Button</button>
+<form action="#">
+    <input type="text" class="text">
+    <label id="agree" for="agree">
+        Agree <input type="checkbox" name="agree" class="checkbox">
+    </label>
+    <label for="name" id="lname">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email" id="lemail">Email:</label>
+    <input type="email" name="email" id="email" disabled>
+</form>
