@@ -1,0 +1,35 @@
+<style>
+    .hidden-one {
+        display: none;
+    }
+    .hidden-two {
+        visibility: hidden;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0; 
+    }
+</style>
+
+<p class="hidden-one">Hidden text</p>
+<p>Visible text</p>
+<hr>
+
+<p class="hidden-two">Hidden text</p>
+<p>Visible text</p>
+<hr>
+
+<p class="sr-only">Hidden text</p>
+<p>Visible text</p>
+<hr>
+
+<p hidden>Hidden text</p>
+<p>Visible text</p>

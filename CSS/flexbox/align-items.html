@@ -1,0 +1,57 @@
+<style>
+    .container {
+        display: flex;
+        align-items: stretch; 
+        border: 2px solid #444;
+        height: 200px;
+        margin: 10px 0;
+    }
+
+    .box {
+        width: 100px;           
+        border: 1px solid #888;
+        background-color: lightblue;
+    }
+
+    .container1 {
+        display: flex;
+        align-items: flex-start; 
+        border: 2px solid #444;
+        height: 200px; 
+    }
+
+    .box1 {
+        width: 100px;           
+        border: 1px solid #888;
+        background-color: lightblue;
+        margin: 4px;
+    }
+
+    .special1 {
+        align-self: stretch;
+        background-color: lightcoral;
+    }
+
+    .special2 {
+        align-self: center;
+        background-color: lightcoral;
+    }
+</style>
+
+<div class="container">
+    <div class="box">One</div>
+    <div class="box">Two</div>
+    <div class="box">Three</div>
+</div>
+
+<div class="container1">
+    <div class="box1">One</div>
+    <div class="box1">Two</div>
+    <div class="box1 special1">Three</div>
+</div>
+
+<div class="container1">
+    <div class="box1">One</div>
+    <div class="box1">Two</div>
+    <div class="box1 special2">Three</div>
+</div>

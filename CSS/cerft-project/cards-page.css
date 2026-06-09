@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(54, 129, 29);
+}
+#playing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 180px;
+    height: 260px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.red {
+    color: rgb(227, 17, 17);
+}
+
+.top-left, .bottom-right {
+    position: absolute;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.middle {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em;
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.cuatro-trebol .column, .cinco-diamante .column {
+    gap: 30px
+}
+
+.cuatro-trebol .middle {
+    gap: 20px
+}
+
+.cinco-diamante .middle {
+    gap: 10px
+}
+
+.middle > div:not(.column) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.center-col {
+    justify-content: center;
+}
+
+.bottom-right {
+    transform: rotate(180deg);
+    bottom: 10px;
+    right: 10px;
+}

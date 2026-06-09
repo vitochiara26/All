@@ -1,0 +1,87 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    padding: 32px;
+    gap: 20px;
+    justify-content: space-around;
+    border-radius: 12px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 200px;
+    border: 2px solid black;
+    padding: 0 16px 16px 16px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 8px;
+}
+
+.basic-plan {
+    order: 0;
+}
+
+.pro-plan {
+    order: 1;
+}
+
+.premium-plan {
+    order: 2;
+}
+
+h1, h2, #price {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 10px 0px 6px 0px;
+}
+
+#price {
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin: 8px auto;
+}
+
+#green {
+    color: rgb(40, 198, 48);
+    font-weight: bold;
+}
+
+#red {
+    color: rgb(220, 41, 41);
+    font-weight: bold;
+}
+
+button {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    width: 80%;
+    padding: 6px;
+    margin: 4px auto 2px auto;
+    border: none;
+    background-color: rgb(251, 190, 78);
+    cursor: pointer;
+    border-radius: 4px;
+    }
+
+button:hover {
+    background-color: rgb(209, 151, 42);
+}
+
+.pricing-card:hover {
+    background-color: rgb(219, 239, 255);
+    transform: scale(1.02);
+}

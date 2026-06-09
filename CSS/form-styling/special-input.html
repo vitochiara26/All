@@ -1,0 +1,42 @@
+<style>
+    input {
+        padding: 8px 12px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    
+    input[type="color"] {
+        width: 60px;
+        height: 40px;
+        padding: 0;
+        border: 2px solid #555;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="date"] {
+        padding: 6px 10px;
+        border: 2px solid #555;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+
+</style>
+
+<form>
+    <label for="favorite-color">Pick your favorite color:</label>
+    <input type="color" id="favorite-color" name="favorite-color">
+    <br>
+    <label for="birthdate">Select your birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate">
+</form>

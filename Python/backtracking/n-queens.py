@@ -24,8 +24,8 @@ def dfs_n_queens(n):
     backtrack(0)
     return solutions
 
-print(f"n=1: {dfs_n_queens(1)}")     
-print(f"n=2: {dfs_n_queens(2)}")     
-print(f"n=3: {dfs_n_queens(3)}")     
+# print(f"n=1: {dfs_n_queens(1)}")     
+# print(f"n=2: {dfs_n_queens(2)}")     
+# print(f"n=3: {dfs_n_queens(3)}")     
 print(f"n=4: {dfs_n_queens(4)}")     
 print(f"n=8 (len): {len(dfs_n_queens(8))}") 
