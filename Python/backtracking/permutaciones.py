@@ -20,15 +20,15 @@ def permutaciones_suma_par(array):
     suma_total = sum(x for x in array)
     if suma_total % 2 == 0:
         print(f'La suma del arreglo es: {suma_total} (Par). Generando permutaciones...')
-        return generar_permutaciones(caracteres)
+        return generar_permutaciones(array)
     else:
         print(f'La suma del arreglo es: {suma_total} (Impar). No hay permutaciones validas.')
         return []
         
     
 
-caracteres = [1, 2, 4]
-permutaciones = permutaciones_suma_par(caracteres)
+arreglo = [1, 2, 4]
+permutaciones = permutaciones_suma_par(arreglo)
 for permutacion in permutaciones:
     print(permutacion)
 
