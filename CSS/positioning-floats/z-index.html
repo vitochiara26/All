@@ -1,0 +1,44 @@
+<style>
+    .container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
+    
+    .box1 {
+        position: absolute;
+        z-index: 1;
+        background: lightcoral;
+        top: 20px;
+        left: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .box2 {
+        position: absolute;
+        z-index: 3;
+        background: gold;
+        top: 40px;
+        left: 40px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .box3 {
+        position: absolute;
+        z-index: 2;
+        background: lightgreen;
+        top: 60px;
+        left: 60px;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<div class="container">
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+    <div class="box3">Box 3</div>
+</div>

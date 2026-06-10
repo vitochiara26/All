@@ -1,0 +1,21 @@
+<style>
+.container {
+    border: 1px solid black;
+}
+
+.container::after {
+    content: "";  
+    display: block;
+    clear: both;
+}
+
+img {
+    float: left;
+    margin-right: 20px;
+}
+</style>
+
+<div class="container">
+    <img src="https://placehold.co/150x150" alt="Placeholder Image">
+    <p> This is an example of text flowing around a floated image.</p>
+</div>
