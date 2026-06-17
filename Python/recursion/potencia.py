@@ -7,4 +7,4 @@ def potencia(n, k):
         return n * potencia(n, k-1)
     
 
-print(potencia(3, 8))
+print(potencia(0, 0))

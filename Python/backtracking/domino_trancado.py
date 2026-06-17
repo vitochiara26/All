@@ -8,7 +8,6 @@ def obtener_fichas_con(x, fichas_juego):
 
 def buscar_tranques(fichas_juego):
     fichas_totales = fichas_juego
-    todas_las_formas = []
     
     #iteramos sobre cada posible numero de tranque (del 0 al 6)
     for x in range(7):
@@ -25,34 +24,38 @@ def buscar_tranques(fichas_juego):
             else:
                 ficha_inicial = (ficha[1], ficha[0]) 
             
-            #se crea la mesa con la primera ficha que se tomo
-            backtrack_mesa([ficha_inicial], restantes, x, fichas_criticas, todas_las_formas)
-    
-    return todas_las_formas
+            
+            #se inicia el backtrack como generador con el contador en 1 porque es la primera ficha
+            yield from backtrack_mesa([ficha_inicial], restantes, x, 1)
 
-def backtrack_mesa(mesa, disponibles, x, fichas_criticas, resultados):
+def backtrack_mesa(mesa, disponibles, x, criticas_usadas):
     punta_izq = mesa[0][0]
     punta_der = mesa[-1][1]
     
-    #Tranque: si las puntas son x y todas las criticas estan en la mesa
-    if punta_izq == x and punta_der == x:
-        #hay que "normalizar" la mesa para que la coomparacion sea eficaz
-        #se voltea cada ficha en un formato menor-mayor ej. de (6,1) -> (1,6)
-        fichas_mesa_normalizadas = {tuple(sorted(ficha)) for ficha in mesa}
-        if fichas_criticas.issubset(set(fichas_mesa_normalizadas)):
-            #reguistramos como quedo la mesa cuando se trancó
-            resultados.append(list(mesa))
-            return 
+    #Tranque: si las puntas son x y todas las criticas estan en la mesa 
+    if punta_izq == x and punta_der == x and criticas_usadas == 7:
+        yield list(mesa)
+        return
+
+    #PODA: si ya no hay fichas criticas en el monton y ya no estamos en 'x' no se puede trancar
+    if criticas_usadas < 7 and punta_der != x:
+        #queda algun x disponible?
+        if not any(x in f for f in disponibles):
+            return
     
+        
     #Intentamos colocar una ficha en la punta derecha
     for ficha in list(disponibles):
         if punta_der in ficha:
             nueva_ficha = ficha if ficha[0] == punta_der else (ficha[1], ficha[0])
             
+            es_critica = x in ficha
+            
             disponibles.remove(ficha)
             mesa.append(nueva_ficha)
             
-            backtrack_mesa(mesa, disponibles, x, fichas_criticas, resultados)
+            yield from backtrack_mesa(mesa, disponibles, 
+                                    x, criticas_usadas + (1 if es_critica else 0))
             
             #se deshace lo anterior para explorar otra ficha
             mesa.pop()
@@ -66,6 +69,16 @@ fichas_juego = [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6),
                 (5, 5), (5, 6),
                 (6, 6)]
 
-resultados = buscar_tranques(fichas_juego)
-print(f"Se encontraron {len(resultados)} formas diferentes de trancar el juego.")
-print(resultados)
+# Al ser un generador imprimimos los resultados uno a uno
+contador = 0
+
+print("Buscando tranques (los resultados se imprimirán en tiempo real)...")
+for forma in buscar_tranques(fichas_juego):
+    contador += 1
+    if contador <= 5:  # Mostramos solo los primeros 5 ejemplos para no saturar la pantalla
+        print(f"Tranque #{contador}: {forma}")
+    
+    if contador % 10000 == 0:
+        print(f"... Procesados {contador} tranques legítimos hasta ahora ...")
+
+print(f"\n¡Proceso completado! Se encontraron un total de {contador} formas de trancar el juego.")

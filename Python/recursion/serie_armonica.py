@@ -4,4 +4,4 @@ def serie_armonica(n):
     
     return 1 / n + serie_armonica(n - 1)
 
-print(round(serie_armonica(20), 4))
+print(round(serie_armonica(3), 4))
