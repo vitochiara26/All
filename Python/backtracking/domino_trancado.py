@@ -51,7 +51,7 @@ def backtrack_mesa(mesa, disponibles, x, criticas_usadas):
             
             es_critica = x in ficha
             
-            disponibles.remove(ficha)
+            disponibles.remove(ficha) 
             mesa.append(nueva_ficha)
             
             yield from backtrack_mesa(mesa, disponibles, 
