@@ -1,0 +1,80 @@
+tr[class="read"] {
+    background: linear-gradient(rgb(184, 255, 189), rgb(80, 250, 92));
+}
+
+tr[class="to-read"] {
+    background: linear-gradient(rgb(242, 242, 242), rgb(196, 196, 196));
+}
+
+tr[class="in-progress"] {
+    background: linear-gradient(rgb(255, 248, 179), rgb(252, 214, 73));
+}
+
+span {
+    display: inline-block;
+}
+
+tr[class="to-read"] span[class="status"] {
+    border: 1px solid rgb(217, 17, 17);
+    background: linear-gradient(rgb(255, 109, 109), rgb(217, 17, 17));
+}
+
+tr[class="read"] span[class="status"] {
+    border: 1px solid rgb(18, 189, 0);
+    background: linear-gradient(rgb(89, 255, 71), rgb(18, 189, 0));
+}
+
+tr[class="in-progress"] span[class="status"] {
+    border: 1px solid rgb(219, 171, 0);
+    background: linear-gradient(rgb(255, 211, 51), rgb(219, 171, 0));
+}
+
+span[class="status"],
+span[class^="rate"] {
+    height: 80%;
+    width: 70%;
+    padding: 2px 2px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+span[class^="rate"]>span {
+    border: 2px solid rgb(184, 184, 184);
+    border-radius: 50%;
+    margin: auto;
+    height: 12px;
+    width: 12px;
+    background-color: #fff
+}
+
+span[class~="one"]> :first-child {
+    background: linear-gradient(rgb(255, 211, 51), rgb(255, 218, 0));
+}
+
+span[class~="two"]> :nth-child(1),
+span[class~="two"]> :nth-child(2) {
+    background: linear-gradient(rgb(255, 211, 51), rgb(255, 218, 0));
+}
+
+span[class~="three"]>span {
+    background: linear-gradient(rgb(255, 211, 51), rgb(255, 218, 0));
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background: linear-gradient(rgb(189, 243, 255), rgb(105, 227, 255));
+}
+
+tr {
+    height: 40px;
+    margin: 10px;
+}
+
+td {
+    text-align: center;
+}

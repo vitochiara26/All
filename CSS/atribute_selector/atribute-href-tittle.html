@@ -12,10 +12,57 @@
         font-weight: bold;
         text-decoration: none;
     }
+
+    a[href][title] {
+        display:block;
+        color: green;
+    }
+
+    a[class~="primary"] {
+        color: red;
+        font-weight: bold;
+    }
+
+    a[href^="https//"] {
+        color: green;
+        text-decoration: underline;
+    }
+    
+    a[href$=".co"] {
+        color: blue;
+        text-decoration: underline dotted;
+    }
+
+    p[lang="en"] {
+        font-style: italic;
+    }
+
+    p[data-lang="fr"] {
+        color: blue;
+    }
 </style>
 
 <a href="https://example.com">Example link with an href attribute</a>
 <a>Example link without an href attribute</a>
+<hr>
+
+<a title="Example link with a title attribute">Example link with a title attribute</a>
+<a>Example link without a title or href attribute</a>
+<hr>
 
 <a href="https://example.com" title="Example link with a title attribute">Example link with a title attribute</a>
 <a>Example link without a title or href attribute</a>
+<hr>
+
+<a href="https://example.com" class="btn primary large">Visit Example Site</a>
+
+<a href="https//example.com" class="btn primary large">Visit Example Site</a>
+
+<a href="https://example.co">Visit Example Site</a>
+<hr>
+
+<p lang="en">This is an English paragraph.</p>
+<p lang="fr">Ceci est un paragraphe en français.</p>
+
+<p data-lang="fr">Ceci est un paragraphe en français.</p>
+<p data-lang="en">This is a paragraph in English.</p>
