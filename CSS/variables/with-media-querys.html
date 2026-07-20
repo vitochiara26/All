@@ -1,0 +1,51 @@
+<style>
+    :root {
+        --card-width: 90%;
+        --card-bg: #f0f0f0;
+        --card-padding: 1rem;
+        --text-color: #333;
+    }
+
+    /* Tablet screens and up */
+    @media (min-width: 600px) {
+        :root {
+            --card-width: 70%;
+            --card-bg: #e8f5e9;
+            --card-padding: 1.5rem;
+        }
+    }
+
+    /* Desktop screens and up */
+    @media (min-width: 1024px) {
+        :root {
+            --card-width: 50%;
+            --card-bg: #d0f0ff;
+            --card-padding: 2rem;
+        }
+    }
+
+    body {
+        font-family: system-ui, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #fafafa;
+    }
+
+    .card {
+        width: var(--card-width);
+        background-color: var(--card-bg);
+        padding: var(--card-padding);
+        color: var(--text-color);
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+</style>
+
+<div class="card">
+    <h2>Responsive Design</h2>
+    <p>Resize the window to see the card adapt!</p>
+</div>

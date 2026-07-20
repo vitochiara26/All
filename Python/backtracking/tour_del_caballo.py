@@ -60,7 +60,7 @@ tablero =  [
         ]
 pausa = 0.4
 
-if tour_del_caballo(tablero, (5, 6), 1, pausa):
+if tour_del_caballo(tablero, (0, 7), 1, pausa):
     imprimir_tablero(tablero)
 else:
     print("No se encontró solución.")

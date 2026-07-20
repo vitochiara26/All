@@ -10,10 +10,11 @@ def dfs(adj_matrix, node_tag):
             for x in range(len(adj_matrix)):
                 if adj_matrix[current_node][x] == 1:
                         stack.append(x)
-                    
 
-dfs([[0, 1, 0, 0]
-   , [1, 0, 1, 0], 
-     [0, 1, 0, 1], 
-     [0, 0, 1, 0]], 
-     1)
+    return visited
+
+
+print(f"Nodos visitados: {dfs([[0, 1, 0, 0],
+                                [1, 0, 1, 0],
+                                [0, 1, 0, 1], 
+                                [0, 0, 1, 0]], 1)}")

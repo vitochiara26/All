@@ -1,0 +1,44 @@
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 equal columns */
+        grid-template-rows: repeat(4, 100px);
+        /* 4 equal rows */
+        gap: 10px;
+    }
+
+    .grid>div {
+        display: grid;
+        place-items: center;
+        background: crimson;
+        color: white;
+        font-size: 4rem;
+    }
+
+    .item1 {
+        grid-column: 1 / span 2;
+    }
+
+    .item4 {
+        grid-column: 1 / span 3;
+    }
+
+    .item6 {
+        grid-column: 1 / span 2;
+    }
+
+    .item7 {
+        grid-column: 3 / span 2;
+    }
+</style>
+
+<div class="grid">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+</div>

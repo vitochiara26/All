@@ -1,0 +1,42 @@
+<style>
+    :root {
+        --main-color: #3498db;
+        --text-color: green;
+        --bg-color: black;
+    }
+
+    body {
+        background-color: var(--bg-color);
+    }
+
+    .button {
+        background-color: var(--main-color);
+    }
+
+    .alert {
+        --main-color: #e74c3c;
+        background-color: var(--main-color);
+    }
+
+    .text {
+        color: var(--text-color, green);
+    }
+
+    .light-theme {
+        --bg-color: white;
+        --text-color: black;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        padding: 10px;
+    }
+</style>
+
+<button class="button">Click Me</button>
+
+<div class="alert">This is an alert message.</div>
+
+<div class="text">This is some text.</div>
+
+<div class="light-theme">
+    <p>This is some light themed text.</p>
+</div>

@@ -1,0 +1,43 @@
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 equal columns */
+        grid-template-rows: repeat(3, 100px);
+        /* 3 equal rows */
+        gap: 10px;
+    }
+
+    .grid div {
+        display: grid;
+        place-items: center;
+        background: crimson;
+        color: white;
+        font-size: 4rem;
+    }
+
+    .item1 {
+        grid-column: 1/3;
+        grid-row: 1/3
+    }
+
+    .item6 {
+        grid-column: 1/ span 2;
+        grid-row: 3/ span 2;
+    }
+</style>
+
+<div class="grid">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+    <div class="item11">11</div>
+    <div class="item12">12</div>
+</div>

@@ -1,0 +1,97 @@
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(83, 83, 83);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    width: 30%;
+    max-width: 300px;
+    height: 100%;
+    background-color: rgb(233, 233, 233);
+    border: 2px solid black;
+    position: fixed;
+    float: left;
+    padding: 10px 0;
+    overflow: scroll;
+}
+
+
+nav>header {
+        font-size: 1.25rem;
+        padding: 10px 0 14px 14px;
+        text-align: center;
+        color: rgb(39, 39, 39);
+    }
+
+a:not(li > a) {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 14px 0 14px 14px;
+    border-top : 2px solid rgb(139, 139, 139);
+    color: rgb(83, 83, 83);
+
+}
+
+main {
+    margin-left: 33%;
+    padding: 30px 20px 15px 0;
+    
+}
+
+main > section > header {
+    font-size: 1.5rem;
+    color: rgb(66, 66, 66);
+    padding-top: 10px;
+}
+
+li {
+    margin: 14px 20px 14px 60px;
+    font-size: 0.95rem;
+}
+
+#inside-element {
+    list-style: circle;
+    margin: 14px 20px 14px 90px;
+    font-size: 0.9rem;
+}
+
+p {
+    margin-left: 20px;
+    font-size: 0.95rem;
+}
+
+code {
+    width:min-content;
+}
+
+.code {
+    display: inline-block;
+    background-color: rgb(226, 226, 226);
+    margin: 0 30px;
+    padding: 11px 16px 16px 16px;
+    border-radius: 4px;
+}
+
+@media (min-width: 1152px) {
+    main {
+        margin-left: 320px;
+    }
+    nav>header {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1151px) {
+    main {
+        margin-left: min(315px, 33%);
+    }
+    nav>header {
+        font-size: 1.75rem;
+    }
+}
