@@ -1,0 +1,12 @@
+<button id="prompt-btn">Show Prompt</button>
+<p id="output"></p>
+
+<script>
+    const btn = document.getElementById("prompt-btn");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", () => {
+        const userName = prompt("What is your name?", "Guest");
+        output.textContent = "Hello, " + userName + "!";
+    });
+</script>

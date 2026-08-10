@@ -4,6 +4,11 @@ class Node:
         self.to_right = None
         self.to_left = None
     
+class NodeSencillo:
+    def __init__(self, value):
+        self.value = value
+        self.to_right = None
+
 class Lista:
     def __init__(self):
         self.head = None
@@ -44,7 +49,7 @@ class Lista:
             new_node.to_left = current_node
             self.size += 1
             return
-        else: #inseercion intermedia 
+        else: #insercion intermedia 
             new_node.to_right = current_node
             new_node.to_left = current_node.to_left
             current_node.to_left.to_right = new_node
@@ -81,6 +86,19 @@ class Lista:
         for pos in range(self.size):
             if pos == index:
                 return f'[{current_node.value}]'
+            current_node = current_node.to_right
+        
+    def search_node_value(self, index):
+        if index < 0:
+            index = self.size + index
+            
+        if index < 0 or index >= self.size:
+            raise IndexError("list index out of range")
+        
+        current_node = self.head
+        for pos in range(self.size):
+            if pos == index:
+                return current_node.value
             current_node = current_node.to_right
 
     def remove_node_by_occurrence(self, value):
@@ -142,6 +160,38 @@ class Lista:
             else :
                 current_node = current_node.to_right
 
+    def pop_node_by_index(self):
+        if index < 0:
+            index = self.size + index
+            
+            if index < 0 or index >= self.size:
+                raise IndexError("list index out of range")
+            
+            current_node = self.head
+            for pos in range(self.size):
+                if pos == index:
+                    if pos == 0:
+                        self.head = current_node.to_right
+                        self.head.to_left = None
+                        current_node.to_right = None
+                        self.size -= 1
+                        return current_node.value
+                    
+                    if pos == self.size - 1:
+                        current_node.to_left.to_right = None
+                        current_node.to_left = None
+                        self.size -= 1
+                        return current_node.value
+                    
+                    current_node.to_left.to_right = current_node.to_right
+                    current_node.to_right.to_left = current_node.to_left
+                    current_node.to_left = None
+                    current_node.to_right = None
+                    self.size -= 1
+                    return current_node.value
+                else :
+                    current_node = current_node.to_right
+    
     def replace_value_of_node(self, value, index):
         if index < 0:
             index = self.size + index
@@ -228,25 +278,255 @@ class Lista:
         
         return new_list
 
-mi_lista = Lista()
-mi_lista.insert_node('A')
-mi_lista.insert_node('B', 0)
-mi_lista.insert_node('C')
-mi_lista.insert_node('D', 2)
-mi_lista.insert_node('E')
-mi_lista.insert_node('F')
+class ListaCircular:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
+    
+    def insert_node(self, value, index = None):
+        new_node = Node(value)
+        
+        #si la lista esta vacia
+        if self.head == None:
+            self.head = new_node
+            self.tail = new_node
+            new_node.to_right = new_node
+            new_node.to_left = new_node
+            self.size = 1
+            return 
+        
+        #normalizacion del indice si pasan uno negativo
+        if index != None and index < 0:
+            index = self.size + index
+            if index < 0:
+                index = 0
+        
+        #si el indice de insercion dado es 0
+        if index == 0:
+            new_node.to_right = self.head
+            new_node.to_left = self.tail
+            self.head.to_left = new_node
+            self.tail.to_right = new_node
+            self.head = new_node
+            self.size += 1
+            return
+        
+        # Insertar al final
+        if index is None or index == self.size:
+            new_node.to_left = self.tail
+            new_node.to_right = self.head
+            self.tail.to_right = new_node
+            self.head.to_left = new_node
+            self.tail = new_node
+            self.size += 1
+            return
+        
+        contador = 0
+        current_node = self.head
+        while contador < index:
+            contador += 1
+            current_node = current_node.to_right
+        
+        new_node.to_right = current_node
+        new_node.to_left = current_node.to_left
+        current_node.to_left.to_right = new_node
+        current_node.to_left = new_node
+        self.size += 1
+        return
+    
+    def imprimir(self):
+        if self.head is None:
+            return '[]'
+        
+        contador = 0
+        current_node = self.head
+        lista_str = '[' 
+        
+        while contador < self.size - 1 :
+            lista_str += f'{current_node.value}, '
+            contador += 1
+            current_node = current_node.to_right
+            
+        
+        lista_str += f'{current_node.value}'
+        lista_str += ']' 
+        
+        return lista_str
 
-print(mi_lista.imprimir())
+class ListaSencilla:
+    def __init__(self):
+        self.head = None
+        self.size = 0
+    
+    def insert_node(self, value, index = None):
+        new_node = NodeSencillo(value)
+        
+        #si la lista esta vacia
+        if self.head == None:
+            self.head  = new_node
+            self.size = 1
+            return 
+        
+        #normalizacion del indice si pasan uno negativo
+        if index != None and index < 0:
+            index = self.size + index
+            if index < 0:
+                index = 0
+        
+        #si el indice de insercion dado es 0
+        if index == 0:
+            new_node.to_right = self.head
+            self.head = new_node
+            self.size += 1
+            return
+        
+        # Insertar al final
+        if (index is None or index == self.size - 1):
+            current_node = self.head
+            while not current_node.to_right is None:
+                current_node = current_node.to_right
+            
+            current_node.to_right = new_node    
+            self.size += 1
+            return
+
+        #insercion intermedia
+        contador = 0
+        current_node = self.head
+        while contador < index - 1:
+            contador += 1
+            current_node = current_node.to_right
+        
+        new_node.to_right = current_node.to_right
+        current_node.to_right = new_node
+        self.size += 1
+        return
+    
+    def remove_node_by_index(self, index = None):
+        if index < 0:
+            index = self.size + index
+        
+        if index < 0 or index >= self.size:
+            raise IndexError("list index out of range")
+
+        if index == 0:
+            a_eliminar = self.head
+            self.head = a_eliminar.to_right
+            a_eliminar.to_right = None
+            self.size -= 1
+            return
+        
+        if index == self.size - 1:
+            contador = 0
+            current_node = self.head
+            while contador < index - 1:
+                contador += 1
+                current_node = current_node.to_right
+            a_eliminar = current_node.to_right
+            current_node.to_right = None 
+            a_eliminar.to_right = None
+            self.size -= 1
+            return
+        
+        contador = 0
+        current_node = self.head
+        while contador < index - 1:
+            contador += 1
+            current_node = current_node.to_right
+        a_eliminar = current_node.to_right
+        current_node.to_right = a_eliminar.to_right
+        a_eliminar.to_right = None
+        self.size -= 1
+        return
+    
+    def search_node(self, index):
+            if index < 0:
+                index = self.size + index
+                
+            if index < 0 or index >= self.size:
+                raise IndexError("list index out of range")
+            
+            current_node = self.head
+            for pos in range(self.size):
+                if pos == index:
+                    return current_node.value
+                current_node = current_node.to_right
+    
+    def imprimir(self):
+        if self.head is None:
+            return '[]'
+        
+        contador = 0
+        current_node = self.head
+        lista_str = '[' 
+        
+        while current_node.to_right != None :
+            lista_str += f'{current_node.value}, '
+            contador += 1
+            current_node = current_node.to_right
+        
+        lista_str += f'{current_node.value}'
+        lista_str += ']' 
+        
+        return lista_str
+    
+    
+
+# mi_lista = Lista()
+# mi_lista.insert_node('A')
+# mi_lista.insert_node('B', 0)
+# mi_lista.insert_node('C')
+# mi_lista.insert_node('D', 2)
+# mi_lista.insert_node('E')
+# mi_lista.insert_node('F')
+
+# print(mi_lista.imprimir())
 
 # print(mi_lista.search_node(3))
 # mi_lista.remove_node_by_occurrence('C')
 # print(mi_lista.imprimir())
 
 # mi_lista.remove_node_by_index(-1)
+#  print(mi_lista.imprimir())
+
+#  mi_lista.replace_value_of_node('Z', 1)
 # print(mi_lista.imprimir())
 
-# mi_lista.replace_value_of_node('Z', 1)
+# second_list = mi_lista.segment_list(step=-1)
+# print(second_list.imprimir())
+
+# mi_lista = ListaCircular()
+# mi_lista.insert_node('A')
+# mi_lista.insert_node('B', 0)
+# mi_lista.insert_node('C', 0)
+# mi_lista.insert_node('D', 0)
+# mi_lista.insert_node('E', 0)
+# mi_lista.insert_node('F', 0)
+# mi_lista.insert_node('X')
+# mi_lista.insert_node('Y')
+# mi_lista.insert_node('Z')
+# mi_lista.insert_node('Ñ', 5)
+
 # print(mi_lista.imprimir())
 
-second_list = mi_lista.segment_list(step=-1)
-print(second_list.imprimir())
+# mi_lista = ListaSencilla()
+# mi_lista.insert_node('A')
+# print(mi_lista.imprimir())
+
+# mi_lista.insert_node('B', 0)
+# print(mi_lista.imprimir())
+
+# mi_lista.insert_node('C', 0)
+# print(mi_lista.imprimir())
+
+# mi_lista.insert_node('D', 0)
+# print(mi_lista.imprimir())
+
+# mi_lista.insert_node('Z')
+# print(mi_lista.imprimir())
+
+# mi_lista.insert_node('Y', 4)
+# print(mi_lista.imprimir())
+
+# print(mi_lista.search_node(3))
