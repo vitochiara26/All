@@ -1,4 +1,4 @@
-let num = 42;
+let num = "42";
 console.log(typeof num); // "number"
 
 let isUserLoggedIn = true;
