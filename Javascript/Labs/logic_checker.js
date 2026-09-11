@@ -17,3 +17,4 @@ if (timmyAge >= 16) {
 } else {
     console.log("Timmy is not old enough to drive.");
 }
+
