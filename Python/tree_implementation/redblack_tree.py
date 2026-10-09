@@ -379,10 +379,10 @@ redblack_tree = BinTree()
 for val in [13, 8, 17, 1, 25, 11, 15, 6, 27, 22]:
     redblack_tree.insert_node(val)
 
-print("Mostrando árbol antes de eliminar el 25...")
-redblack_tree.draw_tree()
+print("Mostrando árbol antes de eliminar el 17...")
+# redblack_tree.draw_tree()
 
-redblack_tree.delete_node(25)
+redblack_tree.delete_node(13)
 
-print("Mostrando árbol despues de eliminar el 25...")
+print("Mostrando árbol despues de eliminar el 17...")
 redblack_tree.draw_tree()

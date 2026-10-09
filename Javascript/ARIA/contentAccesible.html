@@ -1,0 +1,18 @@
+<button id="menuButton" aria-expanded="false" aria-controls="menuList">
+    Menu
+</button>
+
+<ul id="menuList" hidden>
+    <li>List item 1</li>
+    <li>List item 2</li>
+</ul>
+<script>
+    const button = document.getElementById("menuButton");
+    const menu = document.getElementById("menuList");
+
+    button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        menu.hidden = expanded;
+    });
+</script>

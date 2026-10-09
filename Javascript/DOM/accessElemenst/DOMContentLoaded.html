@@ -1,0 +1,14 @@
+<h1>Image Change on DOM Loaded</h1>
+<img id="example-img" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="Cat relaxing" />
+
+<script>
+    function changeImg() {
+        const img = document.getElementById("example-img");
+        img.src =
+            "https://cdn.freecodecamp.org/curriculum/responsive-web-design-principles/FCCStickers-CamperBot200x200.jpg";
+        img.alt = "CamperBot sticker";
+        console.log("image was just changed");
+    }
+
+    changeImg();
+</script>

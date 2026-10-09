@@ -1,0 +1,14 @@
+<ul id="desserts">
+    <li>Cake</li>
+    <li>Pie</li>
+</ul>
+<script>
+    const dessertsList = document.getElementById("desserts");
+    const listItem = document.createElement("li");
+
+    listItem.textContent = "Cookies";
+    dessertsList.appendChild(listItem);
+
+    const lastItem = document.querySelector("#desserts li:last-of-type");
+    dessertsList.removeChild(lastItem);
+</script>

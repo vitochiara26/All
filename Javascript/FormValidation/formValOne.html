@@ -1,0 +1,78 @@
+<style>
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-family: Arial, sans-serif;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #333;
+    }
+
+    input,
+    textarea {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #0078d4;
+        box-shadow: 0 0 3px rgba(0, 120, 212, 0.5);
+        outline: none;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    button[type="submit"] {
+        background-color: #0078d4;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #005ea2;
+    }
+</style>
+
+<form>
+    <label>Enter your email: </label>
+    <input required placeholder="username@sampleCompany.com" type="email" pattern=".+@sampleCompany\.com" />
+
+    <label>Enter your feedback: </label>
+    <textarea required placeholder="Your feedback here..."></textarea>
+
+    <button type="submit">Submit Feedback</button>
+</form>
+
+<script>
+    const input = document.querySelector("input");
+
+    input.addEventListener("input", (e) => {
+        console.log(e.target.validity);
+        if (!e.target.checkValidity()) {
+            e.target.reportValidity();
+            e.target.setCustomValidity(
+        "You must use a company email address that ends in @sampleCompany.com"
+    );
+        }
+    })
+</script>

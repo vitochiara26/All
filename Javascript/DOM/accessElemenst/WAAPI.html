@@ -1,0 +1,66 @@
+<style>
+    body {
+        background: #f1f1f1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .square {
+        background: #1b1b32;
+        width: 10rem;
+        aspect-ratio: 1/1;
+        margin-bottom: 20px;
+        border-radius: 6px;
+    }
+
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+</style>
+
+<div class="square" id="square"></div>
+
+<button id="playBtn">Play</button>
+<button id="pauseBtn">Pause</button>
+
+<script>
+    const square = document.querySelector("#square");
+    const playBtn = document.querySelector("#playBtn");
+    const pauseBtn = document.querySelector("#pauseBtn");
+
+    const animation = square.animate(
+        [{ transform: "translateX(0px)" },
+        { transform: "translateX(100px)" },
+        { transform: "translateX(0px)" },
+        { transform: "translateX(-100px)" },
+        { transform: "translateX(0px)" }],
+        {
+            duration: 5000, // Animation lasts 5 seconds
+            // iterations: Infinity, // Loops indefinitely
+            direction: "alternate", // Moves back and forth
+            easing: "ease-in-out" // Smooth easing function
+        }
+    );
+
+    // Set the onfinish property to log a message when the animation ends
+    animation.onfinish = () => {
+        console.log("Animation finished!");
+    };
+
+    // Play the animation when the "Play" button is clicked
+    playBtn.addEventListener("click", () => {
+        animation.play();
+        console.log("You start the animation");
+    });
+
+    // Pause the animation when the "Pause" button is clicked
+    pauseBtn.addEventListener("click", () => {
+        animation.pause();
+        console.log("You pause the animation");
+    });
+</script>

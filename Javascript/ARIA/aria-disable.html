@@ -1,0 +1,38 @@
+<style>
+    [role="button"] {
+        display: inline-block;
+        background-color: #0078d4;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-family: system-ui, sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.2s, transform 0.1s, opacity 0.2s;
+    }
+
+    [role="button"]:not([aria-disabled="true"]):hover {
+        background-color: #005fa3;
+    }
+
+    [role="button"]:not([aria-disabled="true"]):focus {
+        outline: 2px solid #005fa3;
+        outline-offset: 2px;
+    }
+
+    [role="button"]:not([aria-disabled="true"]):active {
+        transform: scale(0.97);
+    }
+
+    [role="button"][aria-disabled="true"] {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: not-allowed;
+        background-color: #b0b0b0;
+        color: #f2f2f2;
+    }
+</style>
+
+<div role="button" tabindex="-1" aria-disabled="true">Edit</div>

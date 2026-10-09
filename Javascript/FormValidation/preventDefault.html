@@ -1,0 +1,54 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    label {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="text"] {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        outline: none;
+    }
+
+    input[type="text"]:focus {
+        border-color: #007BFF;
+    }
+
+    #output {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        color: #555;
+    }
+</style>
+
+<label>Enter some characters:
+    <input type="text">
+</label>
+<p id="output"></p>
+
+<script>
+    const input = document.querySelector("input");
+    const output = document.getElementById("output");
+
+    input.addEventListener("keydown", (e) => {
+        e.preventDefault();
+        output.innerText = `You pressed the ${e.key} key`;
+    });
+</script>

@@ -1,0 +1,48 @@
+<style>
+    .upload-success {
+        background-color: #4caf50;
+        color: #fff;
+        font-family: system-ui, sans-serif;
+        font-weight: 500;
+        padding: 1em 1.5em;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .upload-success.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .upload-success.fade-out {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+</style>
+
+<div class="upload-success" aria-live="polite">
+    <p>File successfully uploaded</p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const success = document.querySelector(".upload-success");
+
+        setTimeout(() => {
+            success.classList.add("visible");
+        }, 100);
+
+        setTimeout(() => {
+            success.classList.add("fade-out");
+        }, 8000);
+
+        success.addEventListener("transitionend", () => {
+            if (success.classList.contains("fade-out")) {
+                success.remove();
+            }
+        });
+    });
+</script>

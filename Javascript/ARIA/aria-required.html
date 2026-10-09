@@ -1,0 +1,48 @@
+<style>
+    #name-label {
+        font-family: system-ui, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: #333;
+    }
+
+    [role="textbox"] {
+        display: block;
+        width: 100%;
+        min-height: 2rem;
+        padding: 0.5rem 0.75rem;
+        border: 1.5px solid #ccc;
+        border-radius: 4px;
+        font-family: system-ui, sans-serif;
+        font-size: 1rem;
+        color: #222;
+        background-color: #fff;
+        line-height: 1.4;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    [role="textbox"]:hover {
+        border-color: #999;
+    }
+
+    [role="textbox"]:focus {
+        outline: none;
+        border-color: #0078d4;
+        box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.25);
+    }
+
+    [role="textbox"]:empty::before {
+        content: attr(data-placeholder);
+        color: #aaa;
+        pointer-events: none;
+    }
+
+    [role="textbox"][aria-required="true"] {
+        border-left: 3px solid #e81123;
+        padding-left: calc(0.75rem - 3px);
+    }
+</style>
+
+<div id="name-label">Full Name*</div>
+<div role="textbox" contenteditable aria-labelledby="name-label" aria-required="true" id="name"></div>

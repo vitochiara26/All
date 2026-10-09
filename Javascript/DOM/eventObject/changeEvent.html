@@ -1,0 +1,11 @@
+<select id="select-menu">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+</select>
+<script>
+    const selectMenu = document.getElementById("select-menu");
+    selectMenu.addEventListener("change", (event) => {
+        console.log(`You selected: ${event.target.value}`);
+    });
+</script>

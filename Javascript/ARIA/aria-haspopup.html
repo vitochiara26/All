@@ -1,0 +1,61 @@
+<style>
+    #menubutton {
+        background-color: #0078d4;
+        color: #fff;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        position: relative;
+    }
+
+    #menubutton:hover,
+    #menubutton:focus {
+        background-color: #005ea2;
+        outline: none;
+    }
+
+    #filemenu {
+        list-style: none;
+        padding: 4px 0;
+        margin: 4px 0 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        width: 160px;
+        position: absolute;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #filemenu[hidden] {
+        display: none;
+    }
+
+    #filemenu [role="menuitem"] {
+        display: block;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    #filemenu [role="menuitem"]:hover,
+    #filemenu [role="menuitem"]:focus {
+        background-color: #e5f1fb;
+        outline: none;
+    }
+
+    #filemenu [role="menuitem"]:focus-visible {
+        box-shadow: inset 0 0 0 2px #0078d4;
+    }
+</style>
+
+<button id="menubutton" aria-haspopup="menu" aria-controls="filemenu" aria-expanded="false">File</button>
+<ul id="filemenu" role="menu" aria-labelledby="menubutton" hidden>
+    <li role="menuitem" tabindex="-1">Open</li>
+    <li role="menuitem" tabindex="-1">New</li>
+    <li role="menuitem" tabindex="-1">Save</li>
+    <li role="menuitem" tabindex="-1">Delete</li>
+</ul>

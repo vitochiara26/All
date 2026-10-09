@@ -1,0 +1,16 @@
+<style>
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+
+<p id="para">This is a paragraph</p>
+<p id="para-yel">This is a yellow paragraph</p>
+
+<script>
+    const paraEl = document.getElementById("para");
+    paraEl.style.color = "red";
+    const paraYel = document.getElementById("para-yel");
+    paraYel.classList.add("highlight");
+
+</script>

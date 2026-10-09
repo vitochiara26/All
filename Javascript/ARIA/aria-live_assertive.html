@@ -1,0 +1,49 @@
+<style>
+    .session-warning {
+        background-color: #ffcc00;
+        color: #000;
+        font-family: system-ui, sans-serif;
+        font-weight: 500;
+        padding: 1em 1.5em;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .session-warning.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .session-warning.fade-out {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+</style>
+
+<div class="session-warning" aria-live="assertive">
+    <p>Your session will expire in 30 seconds.</p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const warning = document.querySelector(".session-warning");
+
+        setTimeout(() => {
+            warning.classList.add("visible");
+        }, 100);
+
+        setTimeout(() => {
+            warning.classList.add("fade-out");
+        }, 8000);
+
+        warning.addEventListener("transitionend", () => {
+            if (warning.classList.contains("fade-out")) {
+                warning.remove();
+            }
+        });
+    });
+
+</script>

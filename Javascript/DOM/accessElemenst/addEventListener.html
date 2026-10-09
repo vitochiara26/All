@@ -1,0 +1,11 @@
+<button id="btn">Show alert</button>
+<input type="text" id="input" placeholder="Type something" />
+<script>
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", () => alert("You clicked the button"));
+    const input = document.getElementById("input");
+
+    input.addEventListener("input", () => {
+        console.log(input.value);
+    });
+</script>

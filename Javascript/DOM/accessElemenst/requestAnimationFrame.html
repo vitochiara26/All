@@ -1,0 +1,47 @@
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .rect {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 250px;
+        border-radius: 5px;
+        background-color: #1b1b32;
+        color: #f5f6f7;
+        font-size: 2rem;
+        position: absolute;
+    }
+</style>
+
+<div id="rect" class="rect">freeCodeCamp is Awesome</div>
+
+<script>
+    const rect = document.getElementById("rect");
+
+    let position = 0;
+
+    function update() {
+        // Move the rectangle 2px to the right
+        rect.style.left = position + "px";
+        position += 2;
+
+        if (position > window.innerWidth) {
+            // Move the rectangle just outside the left side of the screen
+            position = -rect.offsetWidth;
+        }
+    }
+
+    function animate() {
+        update();
+
+        //request the next frame
+        requestAnimationFrame(animate);
+    }
+
+    // Start the animation
+    requestAnimationFrame(animate);
+</script>

@@ -1,0 +1,79 @@
+<style>
+    [role="tablist"] {
+        display: flex;
+        border-bottom: 2px solid #ddd;
+        gap: 0.25rem;
+        font-family: system-ui, sans-serif;
+    }
+
+    [role="tab"] {
+        appearance: none;
+        border: none;
+        background: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #444;
+        border-radius: 4px 4px 0 0;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    [role="tab"]:hover {
+        background-color: #f3f3f3;
+    }
+
+    [role="tab"][aria-selected="true"] {
+        background-color: #fff;
+        color: #0078d4;
+        border: 2px solid #0078d4;
+        border-bottom: 2px solid #fff;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+    }
+
+    [role="tab"]:focus {
+        outline: 2px solid #0078d4;
+        outline-offset: 2px;
+    }
+</style>
+
+<div role="tablist">
+    <button role="tab" aria-selected="true">Tab 1</button>
+    <button role="tab" aria-selected="false">Tab 2</button>
+    <button role="tab" aria-selected="false">Tab 3</button>
+</div>
+
+<script>
+    document.addEventListener("click", (event) => {
+        const clickedTab = event.target.closest('[role="tab"]');
+        if (!clickedTab) return;
+
+        const tablist = clickedTab.closest('[role="tablist"]');
+        const tabs = tablist.querySelectorAll('[role="tab"]');
+
+        tabs.forEach((tab) => {
+            const isSelected = tab === clickedTab;
+            tab.setAttribute("aria-selected", isSelected);
+            tab.tabIndex = isSelected ? 0 : -1;
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        const activeTab = document.activeElement;
+        if (activeTab.getAttribute("role") !== "tab") return;
+
+        const tablist = activeTab.closest('[role="tablist"]');
+        const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+        const index = tabs.indexOf(activeTab);
+
+        let newIndex = index;
+        if (event.key === "ArrowRight") newIndex = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") newIndex = (index - 1 + tabs.length) % tabs.length;
+
+        if (newIndex !== index) {
+            tabs[newIndex].focus();
+            tabs[newIndex].click();
+        }
+    });
+</script>

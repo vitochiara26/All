@@ -1,0 +1,15 @@
+<h1>Cancel Timeout Example</h1>
+<button id="cancelButton">Cancel Timeout</button>
+
+<script>
+    let timeoutID = setTimeout(() => {
+        console.log("This will run if not canceled");
+    }, 5000);
+
+    document
+        .querySelector("#cancelButton")
+        .addEventListener("click", () => {
+            clearTimeout(timeoutID);
+            console.log("Timeout canceled!");
+        });
+</script>

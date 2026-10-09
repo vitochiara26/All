@@ -1,0 +1,65 @@
+<style>
+    button {
+        background-color: #0078d4;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    button:hover {
+        background-color: #005ea2;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 150px;
+        background: #fff;
+        position: absolute;
+        z-index: 10;
+    }
+
+    li {
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    li:hover {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<button aria-owns="menu1" aria-expanded="true">Menu</button>
+<main>
+    <!-- an entire page worth of content --->
+</main>
+<ul id="menu1">
+    <li>...</li>
+    <li>...</li>
+</ul>
+
+<script>
+    const button = document.querySelector('button');
+    const menu = document.getElementById(button.getAttribute('aria-owns'));
+
+    button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        menu.hidden = expanded;
+    });
+
+    // Close the menu if user clicks outside
+    document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) {
+            button.setAttribute('aria-expanded', 'false');
+            menu.hidden = true;
+        }
+    });
+
+</script>

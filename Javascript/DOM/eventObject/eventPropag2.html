@@ -1,0 +1,15 @@
+<p>
+    <span>Click me~!</span>
+</p>
+<script>
+    const paragraph = document.querySelector("p");
+    const span = document.querySelector("span");
+    paragraph.addEventListener("click", (event) => {
+        console.log("P listener: ");
+        console.log(event.target);
+    });
+    span.addEventListener("click", (event) => {
+        console.log("Span listener: ");
+        console.log(event.target);
+    });
+</script>

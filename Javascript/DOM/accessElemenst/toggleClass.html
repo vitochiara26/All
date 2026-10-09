@@ -1,0 +1,29 @@
+<style>
+    .menu {
+        display: none;
+        background-color: lightgray;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .menu.show {
+        display: block;
+    }
+</style>
+
+<button id="toggle-btn">Toggle Menu</button>
+
+<nav id="menu" class="menu">
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Products</li>
+    </ul>
+</nav>
+
+<script>
+    const menu = document.getElementById("menu");
+    const toggleBtn = document.getElementById("toggle-btn");
+
+    toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
+</script>
